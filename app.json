@@ -1,63 +1,62 @@
 {
   "expo": {
-    "name": "FineDine-OwkoIl",
+    "name": "FineDine",
     "slug": "FineDine-OwkoIl",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "finedine-owkoil",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.lokeshwarkodipunjula.appFineDineOwkoIl"
+      "bundleIdentifier": "com.finedine.app",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBRi5U_PjSiX95XbsGMsND0-4npYog58Wo"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.lokeshwarkodipunjula.appFineDineOwkoIl"
-    },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
-          }
+      "package": "com.finedine.app",
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBRi5U_PjSiX95XbsGMsND0-4npYog58Wo"
         }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
+      }
     },
+    "web": {},
     "extra": {
-      "router": {},
       "eas": {
         "projectId": "70eb24db-7826-4916-9828-6b004c0e047c"
+      },
+      "supabaseUrl": "https://ibyyhjwrhaehhmznyadz.supabase.co",
+      "supabaseAnonKey": "sb_publishable_RV3X-eTTWNiYZK4gNd75oA_sjBaK1S5",
+      "supabaseDbPassword": "Daddy@25021125",
+      "stripePublishableKey": "pk_test_51AE06Az123DemoKeyReplaceMe",
+      "firebaseConfig": {
+        "apiKey": "AIzaSyDYQJbCOvIfpzTBaMg9dpnlbHmdcAUfboI",
+        "authDomain": "finedine-7a2a1.firebaseapp.com",
+        "projectId": "finedine-7a2a1",
+        "storageBucket": "finedine-7a2a1.firebasestorage.app",
+        "messagingSenderId": "2532565094",
+        "appId": "1:2532565094:ios:a55e3fb905f6d625e68da7",
+        "measurementId": "G-XXXXXX"
       }
     },
     "owner": "lokeshwarkodipunjula",
-    "updates": {
-      "url": "https://u.expo.dev/70eb24db-7826-4916-9828-6b004c0e047c"
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    }
+    "plugins": [
+      "@stripe/stripe-react-native"
+    ]
   }
 }
