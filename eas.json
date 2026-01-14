@@ -8,10 +8,13 @@
       "developmentClient": true,
       "distribution": "internal",
       "android": {
-        "image": "latest"
+        "image": "latest",
+        "buildType": "apk"   // faster testing
       },
       "ios": {
-        "image": "latest"
+        "image": "latest",
+        "simulator": true,
+        "enterpriseProvisioning": "adhoc"
       }
     },
     "development-simulator": {
