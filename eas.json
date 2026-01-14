@@ -10,11 +10,6 @@
       "android": {
         "image": "latest",
         "buildType": "apk"   // faster testing
-      },
-      "ios": {
-        "image": "latest",
-        "simulator": true,
-        "enterpriseProvisioning": "adhoc"
       }
     },
     "development-simulator": {
@@ -27,9 +22,6 @@
       "distribution": "internal",
       "channel": "main",
       "android": {
-        "image": "latest"
-      },
-      "ios": {
         "image": "latest"
       }
     },
