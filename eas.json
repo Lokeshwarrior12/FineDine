@@ -1,42 +1,42 @@
 {
   "cli": {
-    "version": ">= 16.28.0",
-    "appVersionSource": "remote"
+    "version": ">= 5.0.0"
+  },
+  "cli": {
+    "appVersionSource": "remote"  // Lets EAS auto-manage versionCode/buildNumber
   },
   "build": {
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "android": {
-        "image": "latest",
-        "buildType": "apk"   // faster testing
-      }
-    },
-    "development-simulator": {
-      "extends": "development",
       "ios": {
         "simulator": true
       }
     },
     "preview": {
       "distribution": "internal",
-      "channel": "main",
       "android": {
-        "image": "latest"
+        "buildType": "apk"
       }
     },
     "production": {
-      "channel": "production",
-      "autoIncrement": true,
+      "distribution": "store",
       "android": {
-        "image": "latest"
-      },
-      "ios": {
-        "image": "latest"
+        "buildType": "app-bundle"
       }
+      
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./google-play-service-account.json"
+      },
+      "ios": {
+        "appleId": "your@email.com",
+        "ascAppId": "your-app-store-connect-id",
+        "appleTeamId": "your-team-id"
+      }
+    }
   }
 }

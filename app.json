@@ -6,10 +6,11 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
+    "scheme": "finedine",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#F97316"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -18,6 +19,12 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.finedine.app",
       "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location to show nearby restaurants",
+        "NSCameraUsageDescription": "We need camera access to upload restaurant images",
+        "NSPhotoLibraryUsageDescription": "We need photo library access to upload images",
+        "ITSAppUsesNonExemptEncryption": false
+      },
       "config": {
         "googleMapsApiKey": "AIzaSyBRi5U_PjSiX95XbsGMsND0-4npYog58Wo"
       }
@@ -25,38 +32,64 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#F97316"
       },
       "package": "com.finedine.app",
       "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.RECORD_AUDIO"
+      ],
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyBRi5U_PjSiX95XbsGMsND0-4npYog58Wo"
         }
       }
     },
-    "web": {},
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow FineDine to access your photos to upload restaurant images"
+        }
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/messaging",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "enableMinifyInReleaseBuilds": true
+          },
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
     "extra": {
+      "router": {
+        "origin": false
+      },
       "eas": {
         "projectId": "70eb24db-7826-4916-9828-6b004c0e047c"
       },
       "supabaseUrl": "https://ibyyhjwrhaehhmznyadz.supabase.co",
-      "supabaseAnonKey": "sb_publishable_RV3X-eTTWNiYZK4gNd75oA_sjBaK1S5",
-      "supabaseDbPassword": "Daddy@25021125",
-      "stripePublishableKey": "pk_test_51AE06Az123DemoKeyReplaceMe",
-      "firebaseConfig": {
-        "apiKey": "AIzaSyDYQJbCOvIfpzTBaMg9dpnlbHmdcAUfboI",
-        "authDomain": "finedine-7a2a1.firebaseapp.com",
-        "projectId": "finedine-7a2a1",
-        "storageBucket": "finedine-7a2a1.firebasestorage.app",
-        "messagingSenderId": "2532565094",
-        "appId": "1:2532565094:ios:a55e3fb905f6d625e68da7",
-        "measurementId": "G-XXXXXX"
-      }
+      "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlieXloandyaGFlaGhtem55YWR6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc0NzExMDksImV4cCI6MjA1MzA0NzEwOX0.ABC123_REPLACE_WITH_FULL_KEY",
+      "stripePublishableKey": "pk_test_51QdVKiP123DEMO456Replace789",
+      "googleMapsApiKey": "AIzaSyBRi5U_PjSiX95XbsGMsND0-4npYog58Wo"
     },
-    "owner": "lokeshwarkodipunjula",
-    "plugins": [
-      "@stripe/stripe-react-native"
-    ]
+    "owner": "lokeshwarkodipunjula"
   }
 }
