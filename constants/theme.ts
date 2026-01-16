@@ -221,14 +221,3 @@ export const fontWeight = {
   bold: '700' as const,
   extrabold: '800' as const,
 };
-// Define your font families here
-export const Fonts = {
-  regular: 'System',
-  medium: 'System',
-  semibold: 'System',
-  bold: 'System',
-  extrabold: 'System',
-  mono: 'Courier',      // add monospace font
-  rounded: 'System',    // or a rounded font if you have one
-};
-

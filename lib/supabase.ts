@@ -825,4 +825,3 @@ export const createNotification = async (notification: Database['public']['Table
   if (error) throw error;
   return data;
 };
-if (!supabaseUrl || !supabaseAnonKey) throw Error('Missing Supabase keys');
