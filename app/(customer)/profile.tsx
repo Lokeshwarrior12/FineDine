@@ -3,9 +3,9 @@ import { supabase } from '@/lib/supabase';
 import { Button, Text, View } from 'react-native';
 
 export default function Profile() {
-  const { session, user, isLoading } = useAuth();
+  const { session, user, loading } = useAuth();
 
-  if (isLoading) return <Text>Loading auth...</Text>;
+  if (loading) return <Text>Loading auth...</Text>;
 
   if (!session) {
     return <Text>Please log in</Text>;

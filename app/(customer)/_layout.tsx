@@ -1,53 +1,70 @@
-// app/(customer)/_layout.tsx
+import { useColors, useIsDark } from '@/constants/theme';
+import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
 import { Home, MoreHorizontal, Search, Ticket, User } from 'lucide-react-native';
 import { Platform } from 'react-native';
 
 export default function CustomerLayout() {
+  const colors = useColors();
+  const isDark = useIsDark();
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#F97316',
-        tabBarInactiveTintColor: '#64748b',
         tabBarStyle: {
-          backgroundColor: Platform.OS === 'ios' ? 'rgba(255,255,255,0.9)' : '#ffffff',
-          borderTopColor: '#e2e8f0',
-          borderTopWidth: 1,
-          elevation: 0,
-          height: Platform.OS === 'ios' ? 90 : 70,
-          paddingBottom: Platform.OS === 'ios' ? 20 : 10,
+          position: 'absolute',
+          bottom: 0,
+          backgroundColor: isDark ? colors.tab.background : '#FFFFFF',
+          borderTopWidth: 0,
+          height: Platform.OS === 'ios' ? 88 : 70,
+          paddingBottom: Platform.OS === 'ios' ? 28 : 10,
+          paddingTop: 10,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: -4 },
+          shadowOpacity: 0.1,
+          shadowRadius: 12,
+          elevation: 16,
         },
+        tabBarActiveTintColor: colors.tab.active,
+        tabBarInactiveTintColor: colors.tab.inactive,
         tabBarLabelStyle: {
-          fontSize: 12,
-          marginBottom: 4,
+          fontSize: 11,
+          fontWeight: '600',
+          marginTop: 4,
         },
+        tabBarBackground: () =>
+          Platform.OS === 'ios' ? (
+            <BlurView
+              intensity={isDark ? 80 : 100}
+              tint={isDark ? 'dark' : 'light'}
+              style={{ flex: 1 }}
+            />
+          ) : null,
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, size, focused }) => (
-            <Home size={focused ? 28 : 24} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <Home size={24} color={color} fill={focused ? color : 'none'} />
           ),
         }}
       />
       <Tabs.Screen
         name="deals"
         options={{
-          title: 'Deals',
-          tabBarIcon: ({ color, size, focused }) => (
-            <Search size={focused ? 28 : 24} color={color} />
-          ),
+          title: 'Explore',
+          tabBarIcon: ({ color }) => <Search size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="coupons"
         options={{
           title: 'Coupons',
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ticket size={focused ? 28 : 24} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <Ticket size={24} color={color} fill={focused ? color : 'none'} />
           ),
         }}
       />
@@ -55,8 +72,8 @@ export default function CustomerLayout() {
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color, size, focused }) => (
-            <User size={focused ? 28 : 24} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <User size={24} color={color} fill={focused ? color : 'none'} />
           ),
         }}
       />
@@ -64,9 +81,7 @@ export default function CustomerLayout() {
         name="more"
         options={{
           title: 'More',
-          tabBarIcon: ({ color, size, focused }) => (
-            <MoreHorizontal size={focused ? 28 : 24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <MoreHorizontal size={24} color={color} />,
         }}
       />
     </Tabs>
