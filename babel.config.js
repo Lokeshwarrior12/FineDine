@@ -3,6 +3,9 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
+      // Required for Reanimated
+      'react-native-reanimated/plugin',
+      // Path alias support (@/ imports)
       [
         'module-resolver',
         {
@@ -10,6 +13,15 @@ module.exports = function (api) {
           alias: {
             '@': './',
           },
+          extensions: [
+            '.ios.js',
+            '.android.js',
+            '.js',
+            '.jsx',
+            '.json',
+            '.tsx',
+            '.ts',
+          ],
         },
       ],
     ],
