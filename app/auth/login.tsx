@@ -1,5 +1,5 @@
-import { useColors, useIsDark } from '@/constants/theme';
-import { useAuth } from '@/context/AuthContext';
+import { useColors, useIsDark } from '@/constants/themes';
+import { useAuth } from '@/contexts/AuthContext';
 import * as Haptics from 'expo-haptics';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams, useRouter } from 'expo-router';

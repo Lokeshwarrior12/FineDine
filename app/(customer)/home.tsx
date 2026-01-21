@@ -1,4 +1,4 @@
-import { getThemedStyles, useTheme } from '@/context/ThemeContext';
+import { getThemedStyles, useTheme } from '@/contexts/ThemeContext';
 import { getActiveOffers, getCurrentUser, getRestaurants, getUserProfile } from '@/lib/supabase';
 import * as Haptics from 'expo-haptics';
 import { LinearGradient } from 'expo-linear-gradient';

@@ -1,5 +1,5 @@
-import { useThemeStore } from '@/constants/theme';
-import { AuthProvider } from '@/context/AuthContext';
+import { useThemeStore } from '@/constants/themes';
+import { AuthProvider } from '@/contexts/AuthContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';

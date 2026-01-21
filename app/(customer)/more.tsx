@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
-import { useAuth } from '@/context/AuthContext';
-import { useColors, useThemeStore } from '@/constants/theme';
+import { useAuth } from '@/contexts/AuthContext';
+import { useColors, useThemeStore } from '@/constants/themes';
 import {
   Calendar, Bell, Gift, Users, Palette, Building,
   HelpCircle, FileText, LogOut, ChevronRight, Sun, Moon

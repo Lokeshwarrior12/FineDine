@@ -15,8 +15,8 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import * as Haptics from 'expo-haptics';
-import { useAuth } from '@/context/AuthContext';
-import { useColors, getShadowStyle } from '@/constants/theme';
+import { useAuth } from '@/contexts/AuthContext';
+import { useColors, getShadowStyle } from '@/constants/themes';
 import { 
   getMyRestaurant, 
   getActiveOffers, 

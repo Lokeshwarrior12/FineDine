@@ -1,4 +1,4 @@
-import { getShadowStyle, useColors } from '@/constants/theme';
+import { getShadowStyle, useColors } from '@/constants/themes';
 import { getActiveOffers } from '@/lib/supabase';
 import { useQuery } from '@tanstack/react-query';
 import * as Haptics from 'expo-haptics';

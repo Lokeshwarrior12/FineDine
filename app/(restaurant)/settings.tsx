@@ -14,8 +14,8 @@ import {
 import * as ImagePicker from 'expo-image-picker';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import * as Haptics from 'expo-haptics';
-import { useAuth } from '@/context/AuthContext';
-import { useColors, getShadowStyle } from '@/constants/theme';
+import { useAuth } from '@/contexts/AuthContext';
+import { useColors, getShadowStyle } from '@/constants/themes';
 import { getMyRestaurant, updateRestaurant } from '@/lib/supabase';
 import { Camera, Save, LogOut } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';

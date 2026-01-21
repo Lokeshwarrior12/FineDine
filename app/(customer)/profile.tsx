@@ -13,8 +13,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as ImagePicker from 'expo-image-picker';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import * as Haptics from 'expo-haptics';
-import { useAuth } from '@/context/AuthContext';
-import { useColors, getShadowStyle } from '@/constants/theme';
+import { useAuth } from '@/contexts/AuthContext';
+import { useColors, getShadowStyle } from '@/constants/themes';
 import { getFavorites, updateUserProfile } from '@/lib/supabase';
 import { 
   User, Mail, Phone, MapPin, Heart, Star, 

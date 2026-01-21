@@ -1,4 +1,4 @@
-import { getThemedStyles, useTheme } from '@/context/ThemeContext';
+import { getThemedStyles, useTheme } from '@/contexts/ThemeContext';
 import { addMenuItem as createMenuItem, deleteMenuItem, getMenuItems, supabase, updateMenuItem } from '@/lib/supabase';
 import * as Haptics from 'expo-haptics';
 import * as ImagePicker from 'expo-image-picker';

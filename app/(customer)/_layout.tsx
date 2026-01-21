@@ -1,4 +1,4 @@
-import { useColors, useIsDark } from '@/constants/theme';
+import { useColors, useIsDark } from '@/constants/themes';
 import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
 import { Home, MoreHorizontal, Search, Ticket, User } from 'lucide-react-native';
